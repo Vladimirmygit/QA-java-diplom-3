@@ -1,6 +1,5 @@
 import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
-import org.junit.Assert;
 import org.junit.Test;
 
 public class RegistrationTests extends BaseTest {
@@ -8,6 +7,7 @@ public class RegistrationTests extends BaseTest {
     RegistrationPage registrationPage = new RegistrationPage();
     LoginPage loginPage = new LoginPage();
     ApiUtils apiUtils = new ApiUtils();
+
     @Test
     @DisplayName("Регистрация")
     @Description("Этот тест проверяет фукционал регистрации")
@@ -19,7 +19,7 @@ public class RegistrationTests extends BaseTest {
         registrationPage.enterEmailInfield();
         registrationPage.enterValidPassInfield();
         registrationPage.clickRegistrationButton();
-        apiUtils.LoginAccount();
+        apiUtils.loginAccount();
         apiUtils.deleteUser();
     }
     @Test

@@ -22,11 +22,10 @@ public class ApiUtils extends BaseTest {
                 .response();
 
         accessToken = response.path("accessToken");
-        System.out.println("accessToken: " + accessToken); // Вывести accessToken в консоль
         return accessToken;
 
     }
-public String LoginAccount() {
+public String loginAccount() {
     Response response = given()
             .contentType("application/json")
             .body("{\"email\": \"" + randomEmail + "\", \"password\": \"" + randomPassword + "\", \"name\": \"" + randomUsername + "\"}")
@@ -39,7 +38,6 @@ public String LoginAccount() {
             .response();
 
     accessToken = response.path("accessToken");
-    System.out.println("accessToken: " + accessToken); // Вывести accessToken в консоль
     return accessToken;
 }
     public void deleteUser() {
